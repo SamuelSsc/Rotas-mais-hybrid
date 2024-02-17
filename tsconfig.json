@@ -1,10 +1,34 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "jsx": "react",
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "allowJs": true,
+    "jsx": "react-native",
+    "noEmit": true,
+    "isolatedModules": false,
     "strict": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "noImplicitThis": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "paths": {
-      "@/*": ["./*"]
+      "@assets": ["./assets"],
+      "@assets/*": ["./assets/*"],
+      "@components": ["./components"],
+      "@components/*": ["./components/*"],
+      "@core": ["./core"],
+      "@core/*": ["./core/*"],
+      "@domain": ["./domain"],
+      "@domain/*": ["./domain/*"],
+      "@data": ["./data"],
+      "@data/*": ["./data/*"],
+      "@model": ["./model"],
+      "@model/*": ["./model/*"],
+      "@constants": ["./constants"],
+      "@constants/*": ["./constants/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
