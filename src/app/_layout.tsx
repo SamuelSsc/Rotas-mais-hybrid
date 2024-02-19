@@ -1,11 +1,13 @@
 import React from "react";
 
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { DefaultTheme, ThemeProvider } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
+import { ThemeProvider } from "styled-components/native";
+import Container from "typedi";
+import { APP_THEME, configTheme } from "@constants/obj.theme/config.theme";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -45,11 +47,17 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
+  configTheme();
+  const theme = Container.get(APP_THEME);
+
   return (
-    <ThemeProvider value={DefaultTheme}>
+    <ThemeProvider theme={theme}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: "modal" }} />
+        <Stack.Screen
+          name="favorite"
+          options={{ title: "Favoritos", presentation: "modal" }}
+        />
       </Stack>
     </ThemeProvider>
   );

@@ -23,11 +23,11 @@ export default function TabLayout() {
           title: "Inicio",
           tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
           headerRight: () => (
-            <Link href="/modal" asChild>
+            <Link href="/favorite" asChild>
               <Pressable>
                 {({ pressed }) => (
                   <FontAwesome
-                    name="info-circle"
+                    name="heart"
                     size={25}
                     color="black"
                     style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
