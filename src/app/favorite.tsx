@@ -13,12 +13,13 @@ import {
   HDisplay,
   InputLabel,
   InputPlaceholder,
+  VBox,
 } from "@components";
 
 export default function ModalScreen() {
   return (
-    <View style={styles.container}>
-      <HDisplay style={styles.title}>Modal</HDisplay>
+    <VBox hAlign="center">
+      <HDisplay>Modal</HDisplay>
       <H1>H1 Text</H1>
       <H2>H2 Text</H2>
       <H3>H3 Text</H3>
@@ -30,23 +31,6 @@ export default function ModalScreen() {
       <InputPlaceholder>Input Placeholder Text</InputPlaceholder>
 
       <StatusBar style={Platform.OS === "ios" ? "light" : "auto"} />
-    </View>
+    </VBox>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
-  },
-});
