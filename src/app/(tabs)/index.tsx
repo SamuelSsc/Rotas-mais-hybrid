@@ -1,14 +1,19 @@
 import React from "react";
-import MapView, { Marker, UrlTile } from "react-native-maps";
+import MapView, { Marker, Overlay } from "react-native-maps";
 import { VBox } from "@components";
-// import SplashImg from "@assets/images/splash.png";
+import { UnitsSection } from "@components/home";
+import { Dimensions } from "react-native";
 
 export default function App() {
+  const screen = Dimensions.get("window");
+  const height = screen.height;
+  const width = screen.width;
+
   return (
     <VBox vGrow noGutter>
       {/* Pegar a localização do usuário aqui */}
       <MapView
-        style={{ height: "100%", width: "100%" }}
+        style={{ height: "100%", width: width }}
         initialRegion={{
           latitude: -23.566063,
           longitude: -46.670729,
@@ -16,7 +21,6 @@ export default function App() {
           longitudeDelta: 0.1,
         }}
       >
-        {/* Criar um map aqui */}
         {MOCK.map((item) => (
           <Marker
             key={`${item.id}-${item.localName}`}
@@ -26,10 +30,11 @@ export default function App() {
             }}
             title={item.localName}
             description={item.description}
-            // image={SplashImg}
           />
         ))}
       </MapView>
+
+      <UnitsSection unitis={MOCK} />
     </VBox>
   );
 }
