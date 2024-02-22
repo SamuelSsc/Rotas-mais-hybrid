@@ -2,6 +2,7 @@ import React from "react";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Link, Tabs } from "expo-router";
 import { Pressable } from "react-native";
+import { commonTheme } from "@constants/obj.theme";
 
 function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>["name"];
@@ -29,7 +30,7 @@ export default function TabLayout() {
                   <FontAwesome
                     name="heart"
                     size={25}
-                    color="black"
+                    color={commonTheme.color.alert}
                     style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
                   />
                 )}

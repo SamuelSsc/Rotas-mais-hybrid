@@ -60,6 +60,14 @@ const color: BaseColor = {
 export const commonTheme: BaseTheme = {
   theme: "common",
   color,
+  border: {
+    radiusSmall: "4px",
+    radius: "8px",
+    radiusLarge: "12px",
+    radiusXLarge: "16px",
+    width: { medium: "1px", large: "2px" },
+    color: neutralColor.grayLight,
+  },
   fontSize: {
     xxSmall: "12px",
     xSmall: "14px",

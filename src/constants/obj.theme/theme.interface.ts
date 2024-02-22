@@ -35,6 +35,14 @@ export interface BaseColor {
 
   whatsapp: string;
 }
+interface BaseBorder {
+  radiusSmall: string;
+  radius: string;
+  radiusLarge: string;
+  radiusXLarge: string;
+  width: { medium: string; large: string };
+  color: string;
+}
 
 interface BaseFontSize {
   xxSmall: string;
@@ -71,6 +79,7 @@ interface BaseZIndex {
 
 export interface BaseTheme {
   theme: string;
+  border: BaseBorder;
   color: BaseColor;
   fontSize: BaseFontSize;
   iconSize: BaseIconSize;
