@@ -5,14 +5,15 @@ import {
   VBox,
   VSeparator,
 } from "@components/common";
-import React from "react";
-import { Dimensions, View } from "react-native";
+import React, { useState } from "react";
+import { Dimensions, Pressable, View } from "react-native";
 import Mock_Image from "@assets/images/img_ubs_mock.jpg";
 import { LatLng } from "react-native-maps";
 import Carousel from "react-native-snap-carousel";
 import { Button, Card } from "@rneui/base";
 import { Badge, CapacityLevel } from "@components/common/atm.badge";
 import { commonTheme } from "@constants/obj.theme";
+import { FontAwesome } from "@expo/vector-icons";
 
 export type Unit = {
   id: string;
@@ -63,6 +64,27 @@ const UnitItem = ({ item }) => {
       <View style={{ position: "absolute", zIndex: 1, left: 10, top: 10 }}>
         <Badge variant={item.variant} />
       </View>
+      {/* AJUSTAR O FUNCIONAMENTO DA SELEÇÃO DE PREFERIDOS AQUI EM BAIXO */}
+      <Pressable
+        style={{
+          position: "absolute",
+          zIndex: 1,
+          right: 10,
+          top: 10,
+        }}
+      >
+        {({ pressed }) => (
+          <FontAwesome
+            name={"heart-o"}
+            size={25}
+            color={commonTheme.color.alert}
+            style={{
+              opacity: pressed ? 0.5 : 1,
+              borderColor: commonTheme.color.alert,
+            }}
+          />
+        )}
+      </Pressable>
       <Card.Image
         source={Mock_Image}
         resizeMode="cover"

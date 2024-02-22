@@ -28,7 +28,7 @@ export default function TabLayout() {
               <Pressable>
                 {({ pressed }) => (
                   <FontAwesome
-                    name="heart"
+                    name="heartbeat"
                     size={25}
                     color={commonTheme.color.alert}
                     style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
