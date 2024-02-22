@@ -14,14 +14,16 @@ import { Button, Card } from "@rneui/base";
 import { Badge, CapacityLevel } from "@components/common/atm.badge";
 import { commonTheme } from "@constants/obj.theme";
 
+export type Unit = {
+  id: string;
+  coordinate: LatLng;
+  localName: string;
+  description: string;
+  variant: CapacityLevel;
+};
 interface UnitsSectionProps {
-  unitis: {
-    id: string;
-    coordinate: LatLng;
-    localName: string;
-    description: string;
-    variant: CapacityLevel;
-  }[];
+  unitis: Unit[];
+  onUnitSelectedChange: (data: Unit) => void;
 }
 
 export const UnitsSection = (props: UnitsSectionProps) => {
@@ -30,13 +32,12 @@ export const UnitsSection = (props: UnitsSectionProps) => {
   const height = screen.height;
 
   const getItemData = (index: number) =>
-    console.log("My data index is>>", index);
+    props.onUnitSelectedChange(props.unitis[index]);
 
   return (
     <VBox
       noGutter
       hAlign="center"
-      //VER se ALINHO POR BAIXO OU POR CIMA>>
       style={{ position: "absolute", top: height * 0.48 }}
     >
       <Carousel
@@ -85,7 +86,8 @@ const UnitItem = ({ item }) => {
               title={"Ver unidade"}
               radius={8}
               type="outline"
-              buttonStyle={{ borderColor: "darkGray" }}
+              buttonStyle={{ borderColor: commonTheme.color.black }}
+              titleStyle={{ color: commonTheme.color.grayDark }}
             />
           </HBox.Item>
         </HBox>
@@ -94,6 +96,3 @@ const UnitItem = ({ item }) => {
     </Card>
   );
 };
-
-//Ajustar btn
-// fazer animação de zoom no local
