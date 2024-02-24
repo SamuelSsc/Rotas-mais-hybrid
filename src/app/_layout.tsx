@@ -58,6 +58,10 @@ function RootLayoutNav() {
           name="favorite"
           options={{ title: "Favoritos", presentation: "modal" }}
         />
+        <Stack.Screen
+          name="index"
+          options={{ title: "Home", headerShown: false }}
+        />
       </Stack>
     </ThemeProvider>
   );
