@@ -1,13 +1,6 @@
-import {
-  Body,
-  BodySecondary,
-  H2,
-  HBox,
-  VBox,
-  VSeparator,
-} from "@components/common";
+import { Body, Button, H2, VSeparator } from "@components/common";
 import { commonTheme } from "@constants/obj.theme";
-import { Button, Card, CheckBox, Input } from "@rneui/base";
+import { Card, CheckBox, Input } from "@rneui/base";
 import React from "react";
 
 export const SignUpForm = () => {
@@ -51,7 +44,7 @@ export const SignUpForm = () => {
         checked={false}
         title={"Concordo com a política de privacidade"}
       />
-      <Button title={"Cadastrar"} radius={8} />
+      <Button text={"Cadastrar"} />
     </Card>
   );
 };

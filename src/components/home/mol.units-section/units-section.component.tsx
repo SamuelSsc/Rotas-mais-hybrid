@@ -1,16 +1,17 @@
 import {
   Body,
   BodySecondary,
+  Button,
   HBox,
   VBox,
   VSeparator,
 } from "@components/common";
-import React, { useState } from "react";
+import React from "react";
 import { Dimensions, Pressable, View } from "react-native";
 import Mock_Image from "@assets/images/img_ubs_mock.jpg";
 import { LatLng } from "react-native-maps";
 import Carousel from "react-native-snap-carousel";
-import { Button, Card } from "@rneui/base";
+import { Card } from "@rneui/base";
 import { Badge, CapacityLevel } from "@components/common/atm.badge";
 import { commonTheme } from "@constants/obj.theme";
 import { FontAwesome } from "@expo/vector-icons";
@@ -100,17 +101,11 @@ const UnitItem = ({ item }) => {
       <VBox>
         <HBox>
           <HBox.Item>
-            <Button title={"Ir"} radius={8} />
+            <Button text={"Ir"} />
           </HBox.Item>
           <HBox.Separator />
           <HBox.Item>
-            <Button
-              title={"Ver unidade"}
-              radius={8}
-              type="outline"
-              buttonStyle={{ borderColor: commonTheme.color.black }}
-              titleStyle={{ color: commonTheme.color.grayDark }}
-            />
+            <Button text={"Ver unidade"} variant="secondary" />
           </HBox.Item>
         </HBox>
         <VSeparator />
