@@ -12,12 +12,12 @@ export const BadgeStyled = styled.View<BadgeStyledProps>`
     props.color ? props.color : props.theme.color.primary};
   align-self: flex-start;
   justify-content: center;
-  border-radius: ${({ theme }) => theme.border.radius};
+  border-radius: ${({ theme }) => theme.border.radius}px;
 `;
 
 export const BadgeTextStyled = styled.Text<BadgeStyledProps>`
   background-color: ${(props) =>
     props.color ? props.color : props.theme.color.primary};
   color: ${(props) => props.theme.color.white};
-  font-size: ${(props) => props.theme.fontSize.xSmall};
+  font-size: ${(props) => props.theme.fontSize.xSmall}px;
 `;

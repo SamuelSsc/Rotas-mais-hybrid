@@ -2,6 +2,7 @@ import {
   Body,
   BodySecondary,
   Button,
+  H2,
   HBox,
   VBox,
   VSeparator,
@@ -92,7 +93,9 @@ const UnitItem = ({ item }) => {
         borderTopLeftRadius={12}
         borderTopRightRadius={12}
       />
-      <Card.Title>{item.localName}</Card.Title>
+      <Card.Title>
+        <H2>{item.localName}</H2>
+      </Card.Title>
       <BodySecondary center numberOfLines={2} ellipsizeMode={"tail"}>
         {item.description}
       </BodySecondary>

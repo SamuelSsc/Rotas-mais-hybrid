@@ -36,21 +36,21 @@ export interface BaseColor {
   whatsapp: string;
 }
 interface BaseBorder {
-  radiusSmall: string;
-  radius: string;
-  radiusLarge: string;
-  radiusXLarge: string;
+  radiusSmall: number;
+  radius: number;
+  radiusLarge: number;
+  radiusXLarge: number;
   width: { medium: string; large: string };
   color: string;
 }
 
 interface BaseFontSize {
-  xxSmall: string;
-  xSmall: string;
-  small: string;
-  medium: string;
-  large: string;
-  xLarge: string;
+  xxSmall: number;
+  xSmall: number;
+  small: number;
+  medium: number;
+  large: number;
+  xLarge: number;
 }
 
 interface BaseIconSize {
