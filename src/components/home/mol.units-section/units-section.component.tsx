@@ -16,6 +16,7 @@ import { Card } from "@rneui/base";
 import { Badge, CapacityLevel } from "@components/common/atm.badge";
 import { commonTheme } from "@constants/obj.theme";
 import { FontAwesome } from "@expo/vector-icons";
+import { Link } from "expo-router";
 
 export type Unit = {
   id: string;
@@ -108,7 +109,11 @@ const UnitItem = ({ item }) => {
           </HBox.Item>
           <HBox.Separator />
           <HBox.Item>
-            <Button text={"Ver unidade"} variant="secondary" />
+            {/* AJUSTAR REDIRECIONAMENTO AQUI, COMO NAVEGAR PELO BUTTON DA LIB*/}
+            <Link href={"/unit-detail/1"}>
+              MOCK BTN
+              <Button text={"Ver unidade"} variant="secondary" />
+            </Link>
           </HBox.Item>
         </HBox>
         <VSeparator />
