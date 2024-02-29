@@ -11,16 +11,17 @@ import {
 import React from "react";
 import Mock_Image from "@assets/images/img_ubs_mock.jpg";
 
-import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
+import { Dimensions, Image } from "react-native";
 
 export default function UnitDetailScreen() {
   const screen = Dimensions.get("window");
   const width = screen.width;
 
+  //   PEGAR OS DADOS POR PARAMS
+
   return (
     <VBox>
       <VSeparator />
-      {/* Bold aqui em baixo */}
       <H1>Nome da Unidade 123...</H1>
       <Image
         source={Mock_Image}

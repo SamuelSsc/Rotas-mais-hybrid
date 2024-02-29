@@ -24,6 +24,7 @@ export const H1 = styled.Text.attrs({
   font-size: ${(props) => props.theme.fontSize.large}px;
   ${(props) => props.mb && `margin-bottom: ${props.theme.spacing.xSmall}px;`}
   ${(props) => props.center && "text-align: center;"}
+  font-weight: bold;
 `;
 
 export const H2 = styled.Text.attrs({
@@ -36,6 +37,7 @@ export const H2 = styled.Text.attrs({
   font-size: ${(props) => props.theme.fontSize.medium}px;
   margin-bottom: ${(props) => props.theme.spacing.small}px;
   margin-top: ${(props) => props.theme.spacing.small}px;
+  font-weight: bold;
 `;
 
 export const H3 = styled.Text.attrs({
@@ -48,6 +50,7 @@ export const H3 = styled.Text.attrs({
   font-size: ${(props) => props.theme.fontSize.small}px;
   ${(props) => props.mb && `margin-bottom: ${props.theme.spacing.xSmall}px;`}
   ${(props) => props.center && "text-align: center;"}
+  font-weight: bold;
 `;
 
 export const H4 = styled.Text.attrs({
@@ -57,6 +60,7 @@ export const H4 = styled.Text.attrs({
   font-size: ${(props) => props.theme.fontSize.xSmall}px;
   ${(props) => props.mb && `margin-bottom: ${props.theme.spacing.xSmall}px;`}
   ${(props) => props.center && "text-align: center;"}
+  font-weight: bold;
 `;
 
 export const Body = styled.Text<TextProps>`
