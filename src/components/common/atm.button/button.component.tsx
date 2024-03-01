@@ -17,7 +17,15 @@ export const Button = ({
   size = "md",
 }: ButtonProps) => {
   if (variant === "primary") {
-    return <Btn title={text} radius={8} onPress={onPress} size={size} />;
+    return (
+      <Btn
+        title={text}
+        radius={8}
+        onPress={onPress}
+        size={size}
+        buttonStyle={{ backgroundColor: commonTheme.color.primary }}
+      />
+    );
   } else if (variant === "secondary") {
     return (
       <Btn

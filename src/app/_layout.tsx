@@ -55,6 +55,15 @@ function RootLayoutNav() {
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen
+          name="unit-detail"
+          options={{
+            headerShown: true,
+            //DARIA PRA PEGAR O NOME DA UNIDADE AQUI??
+            title: "Detalhe da Unidade",
+            headerBackTitle: "Voltar",
+          }}
+        />
+        <Stack.Screen
           name="favorite"
           options={{ title: "Favoritos", presentation: "modal" }}
         />
