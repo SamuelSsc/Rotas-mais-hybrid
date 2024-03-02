@@ -44,7 +44,10 @@ export const Button = ({
         title={text}
         type="clear"
         size={size}
-        titleStyle={{ fontSize: size === "sm" ? 12 : 14 }}
+        titleStyle={{
+          fontSize: size === "sm" ? 12 : 14,
+          color: commonTheme.color.primary,
+        }}
       />
     );
   }
