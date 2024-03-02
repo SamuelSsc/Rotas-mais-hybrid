@@ -35,7 +35,7 @@ export const VBox = styled.View<VBoxProps>`
   padding-horizontal: ${({ noGutter, theme, half }) =>
     noGutter ? "0" : half ? theme.spacing.halfGutter : theme.spacing.gutter}px;
   ${({ bgColor, theme }) =>
-    bgColor && `background-color: ${theme.color.accessoryBackground};`}
+    bgColor && `background-color: ${theme.color.grayLight};`}
   ${({ vGrow }) => vGrow && "flex-grow: 1;"}
 `;
 

@@ -20,7 +20,7 @@ export const UnitInfo = () => {
     <VBox>
       <VSeparator />
       {/* //COLOCAR O NOME DA UNIDADE COMO TITULO DA PÁGINA SE POSSIVEL */}
-      <H1>Nome da Unidade 123...</H1>
+      <H1>Unidade 123...</H1>
 
       {/* ABSTRAIR ISSO AQUI PARA UMA SEÇÃO */}
       <Image
