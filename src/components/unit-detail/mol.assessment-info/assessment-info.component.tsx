@@ -1,12 +1,13 @@
-import { Button, H3, HBox, VBox, VSeparator } from "@components/common";
+import { Button, H2, H3, HBox, VBox, VSeparator } from "@components/common";
 import { Card } from "@rneui/base";
+import { router } from "expo-router";
 import React from "react";
 
 export const AssessmentInfo = () => {
   return (
     <VBox bgColor>
       <VSeparator />
-      <H3>O que as pessoas estão dizendo:</H3>
+      <H2>O que as pessoas estão dizendo:</H2>
       <VSeparator />
 
       <HBox>
@@ -33,7 +34,7 @@ export const AssessmentInfo = () => {
             }}
           >
             <Card.Title>
-              <H3>Tempo para atendimento:</H3>
+              <H3>Tempo de atendimento:</H3>
             </Card.Title>
           </Card>
         </HBox.Item>
@@ -55,7 +56,11 @@ export const AssessmentInfo = () => {
       </HBox>
       <VSeparator />
       <VBox noGutter hAlign="flex-end">
-        <Button variant="link" text="Ver comentários" />
+        <Button
+          variant="link"
+          text="Ver comentários"
+          onPress={() => router.push("/unit-detail/comment")}
+        />
       </VBox>
       <VSeparator />
     </VBox>

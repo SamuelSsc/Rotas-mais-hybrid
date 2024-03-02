@@ -44,6 +44,7 @@ export const Button = ({
         title={text}
         type="clear"
         size={size}
+        onPress={onPress}
         titleStyle={{
           fontSize: size === "sm" ? 12 : 14,
           color: commonTheme.color.primary,
