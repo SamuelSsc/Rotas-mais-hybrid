@@ -24,10 +24,11 @@ export const LoginForm = () => {
         labelStyle={{ fontSize: 12, color: commonTheme.color.grayXDark }}
       />
       <VSeparator />
-      {/* IMPLEMENTAR A SENHA COM *** */}
+
       <Input
         label="Senha:"
         labelStyle={{ fontSize: 12, color: commonTheme.color.grayXDark }}
+        secureTextEntry={true}
       />
       <VBox noGutter hAlign="flex-start">
         <Button text={"Esqueceu a senha?"} variant="link" size="sm" />

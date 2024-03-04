@@ -29,15 +29,16 @@ export const SignUpForm = () => {
         labelStyle={{ fontSize: 12, color: commonTheme.color.grayXDark }}
       />
       <VSeparator />
-      {/* IMPLEMENTAR A SENHA COM *** */}
       <Input
         label="Senha:"
         labelStyle={{ fontSize: 12, color: commonTheme.color.grayXDark }}
+        secureTextEntry={true}
       />
       <VSeparator />
       <Input
         label="Repetir Senha:"
         labelStyle={{ fontSize: 12, color: commonTheme.color.grayXDark }}
+        secureTextEntry={true}
       />
       <CheckBox checked={false} title={"Concordo com os termos de uso"} />
       <CheckBox
