@@ -1,11 +1,11 @@
 import { VBox } from "@components";
-import { LoginForm } from "@components/auth";
+import { SignUpForm } from "@components/auth";
 import React from "react";
 
-export default function HomeScreen() {
+export default function SignUpScreen() {
   return (
     <VBox vGrow vAlign="center" hAlign="center">
-      <LoginForm />
+      <SignUpForm />
     </VBox>
   );
 }

@@ -71,6 +71,14 @@ function RootLayoutNav() {
           name="index"
           options={{ title: "Home", headerShown: false }}
         />
+        <Stack.Screen
+          name="sign-up"
+          options={{
+            title: "Primeiro acesso",
+            headerShown: true,
+            headerBackTitle: "Voltar",
+          }}
+        />
       </Stack>
     </ThemeProvider>
   );
