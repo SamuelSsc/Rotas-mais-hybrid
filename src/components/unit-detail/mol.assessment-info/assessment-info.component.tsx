@@ -38,21 +38,6 @@ export const AssessmentInfo = () => {
             </Card.Title>
           </Card>
         </HBox.Item>
-        <HBox.Separator spacing="small" />
-
-        <HBox.Item>
-          <Card
-            containerStyle={{
-              borderRadius: 8,
-              margin: 0,
-            }}
-          >
-            <Card.Title>
-              <H3>Satisfação:</H3>
-              {/* RANTING */}
-            </Card.Title>
-          </Card>
-        </HBox.Item>
       </HBox>
       <VSeparator />
       <VBox noGutter hAlign="flex-end">
