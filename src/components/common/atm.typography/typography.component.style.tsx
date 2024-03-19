@@ -37,6 +37,7 @@ export const H2 = styled.Text.attrs({
   font-size: ${(props) => props.theme.fontSize.medium}px;
   margin-bottom: ${(props) => props.theme.spacing.small}px;
   margin-top: ${(props) => props.theme.spacing.small}px;
+  ${(props) => props.center && "text-align: center;"}
   font-weight: bold;
 `;
 
