@@ -61,7 +61,7 @@ export const AssessmentInfo = () => {
             }}
           >
             <Card.Title>
-              <H3>Tempo de atendimento:</H3>
+              <H3>Tempo médio de atendimento:</H3>
             </Card.Title>
             <H3 center>3 Hrs</H3>
             <VSeparator />
@@ -74,7 +74,7 @@ export const AssessmentInfo = () => {
       <VBox noGutter hAlign="flex-end">
         <Button
           variant="link"
-          text="Ver comentários"
+          text="Ver comentários (3)"
           onPress={() => router.push("/unit-detail/comment")}
         />
       </VBox>
@@ -82,6 +82,3 @@ export const AssessmentInfo = () => {
     </VBox>
   );
 };
-// Comentario A
-// Comentario B
-// Comentario C
