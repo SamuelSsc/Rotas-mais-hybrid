@@ -4,7 +4,7 @@ import PlaceHolderImage from "@assets/images/placeholder-avatar.jpg";
 import { Body, H4, HBox, VBox, VSeparator } from "@components/common";
 import { Divider } from "@rneui/base";
 
-export const Comment = () => {
+export const CommentsSection = () => {
   return (
     <>
       {Array.from({ length: 3 }, (_, index) => (
