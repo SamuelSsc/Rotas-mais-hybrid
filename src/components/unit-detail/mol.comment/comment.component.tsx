@@ -2,12 +2,13 @@ import React from "react";
 import { Image } from "react-native";
 import PlaceHolderImage from "@assets/images/placeholder-avatar.jpg";
 import { Body, H4, HBox, VBox, VSeparator } from "@components/common";
+import { Divider } from "@rneui/base";
 
 export const Comment = () => {
   return (
     <>
-      {new Array(3).map((_, i) => (
-        <React.Fragment key={`comment-component-${i}`}>
+      {Array.from({ length: 3 }, (_, index) => (
+        <React.Fragment key={`comment-component-${index}`}>
           <VSeparator />
 
           <HBox>
@@ -30,6 +31,7 @@ export const Comment = () => {
             </HBox.Item>
           </HBox>
           <VSeparator />
+          <Divider />
         </React.Fragment>
       ))}
     </>
