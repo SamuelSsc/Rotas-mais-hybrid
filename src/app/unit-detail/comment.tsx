@@ -1,10 +1,9 @@
 import React from "react";
 
-import { Button, H1, HBox, Root, VBox, VSeparator } from "@components";
+import { H1, Root, VBox, VSeparator } from "@components";
 
-import { CommentsSection } from "@components/unit-detail/mol.comment";
-import { Input } from "@rneui/base";
-import { commonTheme } from "@constants/obj.theme";
+import { CommentsSection } from "@components/unit-detail/mol.comment-section";
+import { CreateComment } from "@components/unit-detail/mol.create-comment";
 
 export default function CommentScreen() {
   return (
@@ -15,22 +14,7 @@ export default function CommentScreen() {
         <CommentsSection />
       </VBox>
 
-      <VBox>
-        <VSeparator />
-        <HBox>
-          <HBox.Item>
-            <Input
-              placeholder="Deixe seu comentário"
-              labelStyle={{ fontSize: 12, color: commonTheme.color.grayXDark }}
-            />
-          </HBox.Item>
-          <HBox.Separator />
-
-          <HBox.Item wrap>
-            <Button text=">" />
-          </HBox.Item>
-        </HBox>
-      </VBox>
+      <CreateComment />
     </Root>
   );
 }

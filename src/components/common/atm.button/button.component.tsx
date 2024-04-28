@@ -1,5 +1,5 @@
 import React from "react";
-import { Button as Btn } from "@rneui/base";
+import { Button as Btn, IconNode } from "@rneui/base";
 import { commonTheme } from "@constants/obj.theme";
 
 export type ButtonType = "primary" | "secondary" | "link";
@@ -9,12 +9,16 @@ interface ButtonProps {
   text: string;
   onPress?: () => void;
   size?: "sm" | "md" | "lg";
+  icon?: IconNode;
+  iconRight?: boolean;
 }
 export const Button = ({
   variant = "primary",
   text,
   onPress,
   size = "md",
+  iconRight,
+  icon,
 }: ButtonProps) => {
   if (variant === "primary") {
     return (
@@ -24,6 +28,8 @@ export const Button = ({
         onPress={onPress}
         size={size}
         buttonStyle={{ backgroundColor: commonTheme.color.primary }}
+        icon={icon}
+        iconRight={iconRight}
       />
     );
   } else if (variant === "secondary") {
