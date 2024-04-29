@@ -10,17 +10,27 @@ import {
 } from "@components/common";
 import { Card } from "@rneui/base";
 import { router } from "expo-router";
-import React from "react";
+import React, { useState } from "react";
 import { Arc, Indicator, Progress } from "react-native-cool-speedometer";
 import Speedometer from "react-native-cool-speedometer/dist/Speedometer";
+import { GetFeedback } from "@components/unit-detail/mol.get-feedback";
 
 export const AssessmentInfo = () => {
-  const center = 250 / 2;
+  const [visibleFeedback, setVisibleFeedback] = useState(false);
 
   return (
     <VBox bgColor>
       <VSeparator />
       <H2>O que as pessoas estão dizendo:</H2>
+      <Button
+        variant="secondary"
+        text="Deixar meu feedback"
+        onPress={() => setVisibleFeedback(true)}
+      />
+      {visibleFeedback ? (
+        <GetFeedback onFinishTimer={setVisibleFeedback} />
+      ) : null}
+
       <VSeparator />
 
       <HBox>

@@ -10,8 +10,6 @@ export const BadgeStyled = styled.View<BadgeStyledProps>`
   padding-vertical: ${({ theme }) => theme.spacing.xSmall}px;
   background-color: ${(props) =>
     props.color ? props.color : props.theme.color.primary};
-  align-self: flex-start;
-  justify-content: center;
   border-radius: ${({ theme }) => theme.border.radius}px;
 `;
 

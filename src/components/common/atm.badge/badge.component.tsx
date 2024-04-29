@@ -2,17 +2,21 @@ import * as React from "react";
 
 import { BadgeStyled, BadgeTextStyled } from "./badge.component.style";
 import { commonTheme } from "@constants/obj.theme";
+import { Pressable } from "react-native";
 
 export interface BadgeProps {
   variant: CapacityLevel;
+  onTap?: () => void;
 }
 
 export const Badge: React.FC<BadgeProps> = (props) => (
-  <BadgeStyled color={mapBadge[props.variant].color}>
-    <BadgeTextStyled color={mapBadge[props.variant].color}>
-      {mapBadge[props.variant].text}
-    </BadgeTextStyled>
-  </BadgeStyled>
+  <Pressable onPress={props.onTap}>
+    <BadgeStyled color={mapBadge[props.variant].color}>
+      <BadgeTextStyled color={mapBadge[props.variant].color}>
+        {mapBadge[props.variant].text}
+      </BadgeTextStyled>
+    </BadgeStyled>
+  </Pressable>
 );
 
 export enum CapacityLevel {
