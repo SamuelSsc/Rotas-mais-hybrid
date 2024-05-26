@@ -20,7 +20,7 @@ export const UnitInfo = () => {
     <VBox>
       <VSeparator />
       {/* //COLOCAR O NOME DA UNIDADE COMO TITULO DA PÁGINA SE POSSIVEL */}
-      <H1>Unidade 123...</H1>
+      <H1>Hospital Regional Sul</H1>
 
       {/* ABSTRAIR ISSO AQUI PARA UMA SEÇÃO */}
       <Image
@@ -63,7 +63,6 @@ export const UnitInfo = () => {
         </HBox.Item>
       </HBox>
 
-      {/*IC DO MAPS / WAZE / UBER / 99 / ÍC DE COMPARTILHAR AQUI*/}
       <VSeparator />
       <AppsRedirectSection />
 

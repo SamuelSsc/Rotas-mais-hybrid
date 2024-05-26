@@ -13,6 +13,7 @@ import { router } from "expo-router";
 import React from "react";
 
 export const LoginForm = () => {
+  //Extrair a logica do erro para um componente atomico e reaproveitar.
   return (
     <Card containerStyle={{ borderRadius: 12 }}>
       <VSeparator />
@@ -23,14 +24,31 @@ export const LoginForm = () => {
       <VSeparator />
       <Input
         label="Email:"
-        labelStyle={{ fontSize: 12, color: commonTheme.color.grayXDark }}
+        labelStyle={{
+          fontSize: 12,
+          color: commonTheme.color.alert,
+        }}
+        style={{
+          borderColor: commonTheme.color.alert,
+          color: commonTheme.color.alert,
+        }}
+        renderErrorMessage={true}
+        errorMessage="Email inválido"
+        errorStyle={{ color: commonTheme.color.alert }}
       />
       <VSeparator />
 
       <Input
         label="Senha:"
-        labelStyle={{ fontSize: 12, color: commonTheme.color.grayXDark }}
+        labelStyle={{ fontSize: 12, color: commonTheme.color.alert }}
+        style={{
+          borderColor: commonTheme.color.alert,
+          color: commonTheme.color.alert,
+        }}
         secureTextEntry={true}
+        renderErrorMessage={true}
+        errorMessage="Senha inválida"
+        errorStyle={{ color: commonTheme.color.alert }}
       />
       <VBox noGutter hAlign="flex-start">
         <Button text={"Esqueceu a senha?"} variant="link" size="sm" />

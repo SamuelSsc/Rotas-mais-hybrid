@@ -9,7 +9,6 @@ import {
 } from "@components/common";
 import React from "react";
 import { Dimensions, Pressable, View } from "react-native";
-import Mock_Image from "@assets/images/img_ubs_mock.jpg";
 import { LatLng } from "react-native-maps";
 import Carousel from "react-native-snap-carousel";
 import { Card } from "@rneui/base";
@@ -28,6 +27,7 @@ export type Unit = {
 interface UnitsSectionProps {
   unitis: Unit[];
   onUnitSelectedChange: (data: Unit) => void;
+  onGo: () => void;
 }
 
 export const UnitsSection = (props: UnitsSectionProps) => {
@@ -55,7 +55,7 @@ export const UnitsSection = (props: UnitsSectionProps) => {
   );
 };
 
-const UnitItem = ({ item }) => {
+export const UnitItem = ({ item }) => {
   return (
     <Card
       containerStyle={{
@@ -89,7 +89,7 @@ const UnitItem = ({ item }) => {
         )}
       </Pressable>
       <Card.Image
-        source={Mock_Image}
+        source={item.image}
         resizeMode="cover"
         borderTopLeftRadius={12}
         borderTopRightRadius={12}
@@ -105,7 +105,7 @@ const UnitItem = ({ item }) => {
       <VBox>
         <HBox>
           <HBox.Item>
-            <Button text={"Ir"} />
+            <Button text={"Ir"} onPress={item.onGo} />
           </HBox.Item>
           <HBox.Separator />
           <HBox.Item>

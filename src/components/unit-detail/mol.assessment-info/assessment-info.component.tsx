@@ -45,11 +45,11 @@ export const AssessmentInfo = () => {
               <H3>Lotação:</H3>
             </Card.Title>
             <Speedometer
-              value={80}
+              value={24}
               max={100}
               angle={180}
               lineCap="round"
-              accentColor="red"
+              accentColor="green"
               width={150}
               height={50}
             >
@@ -57,7 +57,7 @@ export const AssessmentInfo = () => {
               <Progress arcWidth={20} />
               <Indicator fixValue />
             </Speedometer>
-            <Body center>{"Lotado"}</Body>
+            <Body center>{"Baixa"}</Body>
           </Card>
         </HBox.Item>
         <HBox.Separator spacing="small" />

@@ -1,17 +1,23 @@
 import React, { useRef, useState } from "react";
-import MapView, { LatLng, Marker, Overlay } from "react-native-maps";
+import MapView, { Marker } from "react-native-maps";
 import { VBox } from "@components";
 import { Unit, UnitsSection } from "@components/home";
 import { Dimensions } from "react-native";
 import { CapacityLevel } from "@components/common/atm.badge";
-import { AnimatedMapView } from "react-native-maps/lib/MapView";
+import MapViewDirections, {
+  MapDirectionsResponse,
+} from "react-native-maps-directions";
+import Mock_Image from "@assets/images/img_ubs_mock.jpg";
+import Mock_Image2 from "@assets/images/Mock-Image-2.jpeg";
+import Mock_Image3 from "@assets/images/Mock-Image-3.jpeg";
 
 export default function App() {
   const screen = Dimensions.get("window");
   const width = screen.width;
   const mapRef = useRef<MapView>();
 
-  const [_, setUnitSelected] = useState<Unit>(MOCK[0]);
+  const [unitSelected, setUnitSelected] = useState<Unit>(MOCK[0]);
+  const [directions, setDirections] = useState<MapDirectionsResponse>();
 
   const handleUnitsChange = (data: Unit) => {
     setUnitSelected(data);
@@ -23,10 +29,19 @@ export default function App() {
     });
   };
 
+  const handleGo = () =>
+    mapRef.current.fitToCoordinates(directions.coordinates, {
+      edgePadding: {
+        top: 50,
+        bottom: 50,
+        left: 50,
+        right: 50,
+      },
+    });
+
   return (
     <VBox vGrow noGutter>
-      {/* Pegar a localização do usuário aqui */}
-      <AnimatedMapView
+      <MapView
         style={{ height: "100%", width: width }}
         initialRegion={{
           latitude: MOCK[0].coordinate.latitude,
@@ -36,6 +51,17 @@ export default function App() {
         }}
         ref={mapRef}
       >
+        <MapViewDirections
+          origin={MOCK[1].coordinate}
+          destination={unitSelected.coordinate}
+          apikey={"AIzaSyA1ne797VJiS63dznN5t6MyDzR19tYTnbI"}
+          strokeColor="hotpink"
+          strokeWidth={4}
+          onReady={(result) => {
+            setDirections(result);
+          }}
+        />
+
         {MOCK.map((item) => (
           // DAR UM DESTAQUE MAIOR PARA O MARKER QUE ESTIVER A ÁMOSTRA
           <Marker
@@ -48,63 +74,74 @@ export default function App() {
             description={item.description}
           />
         ))}
-      </AnimatedMapView>
+      </MapView>
 
-      <UnitsSection unitis={MOCK} onUnitSelectedChange={handleUnitsChange} />
+      {/* NESSE COMPONENTE AQUI MOSTRAR A DISTANCIA DAS UNIDADES DE SAÚDE para o
+      local atual do user */}
+      <UnitsSection
+        unitis={MOCK}
+        onUnitSelectedChange={handleUnitsChange}
+        onGo={handleGo}
+      />
     </VBox>
   );
 }
 
-const MOCK = [
+export const MOCK = [
   {
     id: "1",
     coordinate: {
-      latitude: -23.556734,
-      longitude: -46.656536,
+      latitude: -23.6592055,
+      longitude: -46.7179325,
     },
-    localName: "TESTE-1",
+    localName: "Hospital do Servidor Público Municipal",
     description: "lorem ipsum mocked for tcc unity of health ",
     variant: CapacityLevel.Close,
+    image: Mock_Image2,
   },
   {
     id: "2",
     coordinate: {
-      latitude: -23.56312,
-      longitude: -46.65483,
+      latitude: -23.6592055,
+      longitude: -46.7179325,
     },
-    localName: "TESTE-2",
+    localName: "Hospital Regional Sul",
     description:
-      "Unidade de saude da vila Piriri, atendendo os clientes com os melhores funcionários e no melhor tempo possível, venha você tbm se tratar com a gente, o que acontece se tiver mais uma linha aqui no caso??",
+      "Unidade de saude da vila Pipipipopopo, atendendo os clientes com os melhores funcionários e no melhor tempo possível, venha você tbm se tratar com a gente, o que acontece se tiver mais uma linha aqui no caso??",
     variant: CapacityLevel.Empty,
+    image: Mock_Image3,
   },
   {
     id: "3",
     coordinate: {
-      latitude: -23.566063,
-      longitude: -46.670729,
+      latitude: -23.65924655,
+      longitude: -46.7179325,
     },
-    localName: "TESTE-3",
+    localName: "Hospital da Luz Unidade Avançada Barão do Rio Branco",
     description: "MOCK FOR TCC",
     variant: CapacityLevel.Full,
+    image: Mock_Image,
   },
   {
     id: "4",
     coordinate: {
-      latitude: -23.542502,
-      longitude: -46.629965,
+      latitude: -23.65961,
+      longitude: -46.7159449,
     },
-    localName: "TESTE-4",
+    localName: "Hospital da Santa Casa de Santo Amaro",
     description: "MOCK FOR TCC",
     variant: CapacityLevel.Medium,
+    image: Mock_Image,
   },
   {
     id: "5",
     coordinate: {
-      latitude: -23.520425,
-      longitude: -46.629969,
+      latitude: -23.6616906,
+      longitude: -46.7222863,
     },
-    localName: "TESTE-5",
+    localName: "Hospital tito de morais",
     description: "MOCK FOR TCC",
     variant: CapacityLevel.VeryFull,
+    image: Mock_Image,
   },
 ];

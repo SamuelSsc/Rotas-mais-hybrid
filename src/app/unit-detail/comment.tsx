@@ -10,7 +10,7 @@ export default function CommentScreen() {
     <Root>
       <VBox bgColor>
         <VSeparator />
-        <H1>Titulo da unidade</H1>
+        <H1>Hospital Regional Sul</H1>
         <CommentsSection />
       </VBox>
 
