@@ -1,12 +1,18 @@
 import { Input } from "@rneui/themed";
 import React from "react";
 
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { FlatList } from "react-native";
 import { MOCK } from ".";
-import { Button, HBox, UnitItem, VBox, VSeparator } from "@components";
+import { Button, H2, HBox, UnitItem, VBox, VSeparator } from "@components";
 import { FontAwesome } from "@expo/vector-icons";
+import { FilterBottomSheet } from "@components/common/filter-bottom-sheet";
 
 export default function SearchScreen() {
+  const [isVisible, setIsVisible] = React.useState(false);
+  const handleFilter = () => {
+    setIsVisible(true);
+  };
+
   return (
     <VBox>
       <VSeparator />
@@ -15,7 +21,7 @@ export default function SearchScreen() {
         <HBox.Item>
           <Input label="Pesquisar Unidade de saude:" />
         </HBox.Item>
-        <HBox.Item wrap>
+        <HBox.Item wrap vAlign="center">
           <Button
             text="Filtrar"
             iconRight
@@ -27,6 +33,7 @@ export default function SearchScreen() {
                 style={{ marginLeft: 4 }}
               />
             }
+            onPress={handleFilter}
           />
         </HBox.Item>
       </HBox>
@@ -36,21 +43,7 @@ export default function SearchScreen() {
         ItemSeparatorComponent={() => <VSeparator />}
         keyExtractor={(item) => item.id}
       />
+      <FilterBottomSheet isVisible={isVisible} setIsVisible={setIsVisible} />
     </VBox>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
-  },
-});
