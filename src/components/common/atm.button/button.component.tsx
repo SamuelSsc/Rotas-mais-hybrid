@@ -2,7 +2,7 @@ import React from "react";
 import { Button as Btn, IconNode } from "@rneui/base";
 import { commonTheme } from "@constants/obj.theme";
 
-export type ButtonType = "primary" | "secondary" | "link";
+export type ButtonType = "primary" | "secondary" | "link" | "linkAlert";
 
 interface ButtonProps {
   variant?: ButtonType;
@@ -55,6 +55,21 @@ export const Button = ({
           fontSize: size === "sm" ? 12 : 14,
           color: commonTheme.color.primary,
         }}
+      />
+    );
+  } else if (variant === "linkAlert") {
+    return (
+      <Btn
+        title={text}
+        type="clear"
+        size={size}
+        onPress={onPress}
+        titleStyle={{
+          fontSize: size === "sm" ? 12 : 14,
+          color: commonTheme.color.alert,
+        }}
+        icon={icon}
+        iconRight={iconRight}
       />
     );
   }
