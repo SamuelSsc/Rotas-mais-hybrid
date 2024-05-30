@@ -52,7 +52,7 @@ export default function TabLayout() {
         <Tabs.Screen
           name="about"
           options={{
-            title: "Ajuda",
+            title: "Ajuda & Suporte",
             tabBarIcon: ({ color }) => (
               <TabBarIcon name="question-circle" color={color} />
             ),

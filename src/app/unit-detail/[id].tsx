@@ -6,8 +6,6 @@ import { Root, Scroll, VSeparator } from "@components";
 
 export default function UnitDetailScreen() {
   const { id } = useLocalSearchParams();
-  console.log(id);
-  //   PEGAR OS OUTROS DADOS DA LISTAGEM POR PARAMS
 
   return (
     <Root>

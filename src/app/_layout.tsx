@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { ThemeProvider } from "styled-components/native";
 import Container from "typedi";
 import { APP_THEME, configTheme } from "@constants/obj.theme/config.theme";
+import { PaperProvider } from "react-native-paper";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -52,34 +53,45 @@ function RootLayoutNav() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen
-          name="unit-detail"
-          options={{
-            headerShown: true,
-            //DARIA PRA PEGAR O NOME DA UNIDADE AQUI??
-            title: "Detalhe da Unidade",
-            headerBackTitle: "Voltar",
-          }}
-        />
-        <Stack.Screen
-          name="favorite"
-          options={{ title: "Favoritos", presentation: "modal" }}
-        />
-        <Stack.Screen
-          name="index"
-          options={{ title: "Home", headerShown: false }}
-        />
-        <Stack.Screen
-          name="sign-up"
-          options={{
-            title: "Primeiro acesso",
-            headerShown: true,
-            headerBackTitle: "Voltar",
-          }}
-        />
-      </Stack>
+      <PaperProvider>
+        <Stack>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen
+            name="unit-detail"
+            options={{
+              headerShown: true,
+              //DARIA PRA PEGAR O NOME DA UNIDADE AQUI??
+              title: "Detalhe da Unidade",
+              headerBackTitle: "Voltar",
+            }}
+          />
+
+          <Stack.Screen
+            name="assessibility"
+            options={{
+              headerShown: true,
+              title: "Assessibilidade",
+              headerBackTitle: "Voltar",
+            }}
+          />
+          <Stack.Screen
+            name="favorite"
+            options={{ title: "Favoritos", presentation: "modal" }}
+          />
+          <Stack.Screen
+            name="index"
+            options={{ title: "Home", headerShown: false }}
+          />
+          <Stack.Screen
+            name="sign-up"
+            options={{
+              title: "Primeiro acesso",
+              headerShown: true,
+              headerBackTitle: "Voltar",
+            }}
+          />
+        </Stack>
+      </PaperProvider>
     </ThemeProvider>
   );
 }
