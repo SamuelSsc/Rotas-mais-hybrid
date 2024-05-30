@@ -75,6 +75,22 @@ function RootLayoutNav() {
             }}
           />
           <Stack.Screen
+            name="faq"
+            options={{
+              headerShown: true,
+              title: "Perguntas Frequentes",
+              headerBackTitle: "Voltar",
+            }}
+          />
+          <Stack.Screen
+            name="contact-us"
+            options={{
+              headerShown: true,
+              title: "Fale conosco",
+              headerBackTitle: "Voltar",
+            }}
+          />
+          <Stack.Screen
             name="favorite"
             options={{ title: "Favoritos", presentation: "modal" }}
           />

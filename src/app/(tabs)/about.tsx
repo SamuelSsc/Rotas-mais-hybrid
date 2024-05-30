@@ -30,37 +30,41 @@ export default function AboutScreen() {
       <Divider />
       <VSeparator />
 
-      <HBox>
-        <HBox.Item>
-          <H3>Perguntas Frequentes</H3>
-        </HBox.Item>
-        <HBox.Item wrap>
-          <FontAwesome
-            name="chevron-right"
-            color={"black"}
-            size={16}
-            style={{ marginLeft: 4 }}
-          />
-        </HBox.Item>
-      </HBox>
+      <Pressable onPress={() => router.navigate("/faq")}>
+        <HBox>
+          <HBox.Item>
+            <H3>Perguntas Frequentes</H3>
+          </HBox.Item>
+          <HBox.Item wrap>
+            <FontAwesome
+              name="chevron-right"
+              color={"black"}
+              size={16}
+              style={{ marginLeft: 4 }}
+            />
+          </HBox.Item>
+        </HBox>
+      </Pressable>
 
       <VSeparator />
       <Divider />
       <VSeparator />
 
-      <HBox>
-        <HBox.Item>
-          <H3>Fale conosco</H3>
-        </HBox.Item>
-        <HBox.Item wrap>
-          <FontAwesome
-            name="chevron-right"
-            color={"black"}
-            size={16}
-            style={{ marginLeft: 4 }}
-          />
-        </HBox.Item>
-      </HBox>
+      <Pressable onPress={() => router.navigate("/contact-us")}>
+        <HBox>
+          <HBox.Item>
+            <H3>Fale conosco</H3>
+          </HBox.Item>
+          <HBox.Item wrap>
+            <FontAwesome
+              name="chevron-right"
+              color={"black"}
+              size={16}
+              style={{ marginLeft: 4 }}
+            />
+          </HBox.Item>
+        </HBox>
+      </Pressable>
     </VBox>
   );
 }
