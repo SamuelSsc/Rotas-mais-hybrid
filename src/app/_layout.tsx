@@ -70,7 +70,7 @@ function RootLayoutNav() {
             name="assessibility"
             options={{
               headerShown: true,
-              title: "Assessibilidade",
+              title: "Acessibilidade",
               headerBackTitle: "Voltar",
             }}
           />

@@ -13,7 +13,7 @@ export default function AboutScreen() {
       <Pressable onPress={() => router.navigate("/assessibility")}>
         <HBox>
           <HBox.Item>
-            <H3>Assessibilidade</H3>
+            <H3>Acessibilidade</H3>
           </HBox.Item>
           <HBox.Item wrap>
             <FontAwesome
