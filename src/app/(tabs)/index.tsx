@@ -10,6 +10,7 @@ import MapViewDirections, {
 import Mock_Image from "@assets/images/img_ubs_mock.jpg";
 import Mock_Image2 from "@assets/images/Mock-Image-2.jpeg";
 import Mock_Image3 from "@assets/images/Mock-Image-3.jpeg";
+import Mock_Image4 from "@assets/images/Mock-Image-4.jpeg";
 
 export default function App() {
   const screen = Dimensions.get("window");
@@ -95,7 +96,8 @@ export const MOCK = [
       longitude: -46.7179325,
     },
     localName: "Hospital do Servidor Público Municipal",
-    description: "lorem ipsum mocked for tcc unity of health ",
+    description:
+      "Localizado na vibrante cidade de São Paulo, o Hospital do Servidor Público Municipal é um símbolo de dedicação e cuidado à saúde. Situado na Avenida 23 de Maio, nosso hospital combina tecnologia de ponta com uma equipe de profissionais altamente qualificados, prontos para oferecer o melhor atendimento possível.",
     variant: CapacityLevel.Close,
     image: Mock_Image2,
   },
@@ -107,8 +109,8 @@ export const MOCK = [
     },
     localName: "Hospital Regional Sul",
     description:
-      "Unidade de saude da vila Pipipipopopo, atendendo os clientes com os melhores funcionários e no melhor tempo possível, venha você tbm se tratar com a gente, o que acontece se tiver mais uma linha aqui no caso??",
-    variant: CapacityLevel.Empty,
+      "Unidade de saude regional sul, atendendo os clientes com os melhores funcionários e no melhor tempo possível, venha você tambem se tratar com a gente.",
+    variant: CapacityLevel.VeryFull,
     image: Mock_Image3,
   },
   {
@@ -128,7 +130,7 @@ export const MOCK = [
       latitude: -23.65961,
       longitude: -46.7159449,
     },
-    localName: "Hospital da Santa Casa de Santo Amaro",
+    localName: "Hospital tito de morais",
     description: "MOCK FOR TCC",
     variant: CapacityLevel.Medium,
     image: Mock_Image,
@@ -139,9 +141,10 @@ export const MOCK = [
       latitude: -23.6616906,
       longitude: -46.7222863,
     },
-    localName: "Hospital tito de morais",
-    description: "MOCK FOR TCC",
-    variant: CapacityLevel.VeryFull,
-    image: Mock_Image,
+    localName: "Hospital da Santa Casa de Santo Amaro",
+    description:
+      "Localizado no coração de Santo Amaro, em São Paulo, o Hospital da Santa Casa de Santo Amaro é uma instituição renomada, conhecida pela tradição e excelência no atendimento à saúde.",
+    variant: CapacityLevel.Empty,
+    image: Mock_Image4,
   },
 ];

@@ -9,7 +9,7 @@ import {
 } from "@components/common";
 import React from "react";
 import { Dimensions, Image } from "react-native";
-import Mock_Image from "@assets/images/img_ubs_mock.jpg";
+import Mock_Image from "@assets/images/Mock-Image-3.jpeg";
 import { AppsRedirectSection } from "@components/unit-detail/mol.apps-redirect-section";
 
 export const UnitInfo = () => {
@@ -29,11 +29,14 @@ export const UnitInfo = () => {
         style={{ maxWidth: width * 0.9, height: 300 }}
       />
       <H4>Lotação:</H4>
-      <Body>baixa</Body>
+      <Body>Muito Cheio</Body>
       <VSeparator />
 
       <H4>Endereço:</H4>
-      <Body>Av. Pipipipopopo XYZ...</Body>
+      <Body>
+        R. Gen. Roberto Alves de Carvalho Filho, 270 - Santo Amaro, São Paulo -
+        SP, 04744-000
+      </Body>
       <VSeparator />
 
       <H4>Distância:</H4>
@@ -51,7 +54,7 @@ export const UnitInfo = () => {
           <Body>Abre:</Body>
         </HBox.Item>
         <HBox.Item wrap vAlign="center">
-          <BodySecondary>00:00</BodySecondary>
+          <BodySecondary>07:00</BodySecondary>
         </HBox.Item>
 
         <HBox.Separator spacing="xLarge" />
@@ -59,7 +62,7 @@ export const UnitInfo = () => {
           <Body>Fecha:</Body>
         </HBox.Item>
         <HBox.Item wrap vAlign="center">
-          <BodySecondary>00:00</BodySecondary>
+          <BodySecondary>18:00</BodySecondary>
         </HBox.Item>
       </HBox>
 

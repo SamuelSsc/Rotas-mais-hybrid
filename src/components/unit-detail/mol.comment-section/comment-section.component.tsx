@@ -34,10 +34,13 @@ export const CommentsSection = () => {
             <HBox.Item>
               <H4>Usuário {index + 1}</H4>
               <Body>
-                Meu comentário Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Obcaecati voluptate necessitatibus accusantium
-                ab perferendis cupiditate optio rerum odio atque aliquam quia,
-                nam iusto sit quas
+                {index === 0
+                  ? `Eu não recomendo esse hospital. Cheguei com uma dor intensa e tive que esperar mais de 3 horas para ser atendido. A sala de espera estava lotada e parecia que ninguém se importava com a urgência dos pacientes. Muito decepcionante!`
+                  : index === 1
+                  ? `Minha experiência no hospital foi horrível. O lugar estava superlotado e o tempo de espera foi inacreditável. Levei mais de 3 horas para ser atendido. O sistema precisa de uma revisão urgente para melhorar o atendimento.`
+                  : index === 2
+                  ? `É inaceitável esperar mais de 3 horas para ser atendido em um hospital. O lugar estava cheio e parecia desorganizado. Precisam contratar mais profissionais para dar conta da demanda e melhorar a eficiência do atendimento.`
+                  : `Infelizmente, o atendimento nesse hospital deixa muito a desejar. Esperei mais de 3 horas para ser atendido em uma sala de espera lotada. Algo precisa ser feito para reduzir esses tempos de espera absurdos. Não recomendo!`}
               </Body>
             </HBox.Item>
           </HBox>
