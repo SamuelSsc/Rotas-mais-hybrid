@@ -106,6 +106,32 @@ function RootLayoutNav() {
               headerBackTitle: "Voltar",
             }}
           />
+          <Stack.Screen
+            name="versions"
+            options={{
+              title: "Versões do App",
+              headerShown: true,
+              headerBackTitle: "Voltar",
+            }}
+          />
+          <Stack.Screen
+            name="common-version-info"
+            options={{
+              title: "Plano gratuito",
+              headerShown: true,
+              headerBackTitle: "Voltar",
+              presentation: "modal",
+            }}
+          />
+          <Stack.Screen
+            name="premium-version-info"
+            options={{
+              title: "Plano EXPRESS",
+              headerShown: true,
+              headerBackTitle: "Voltar",
+              presentation: "modal",
+            }}
+          />
         </Stack>
       </PaperProvider>
     </ThemeProvider>

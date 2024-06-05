@@ -54,7 +54,7 @@ export const LoginForm = () => {
         <Button text={"Esqueceu a senha?"} variant="link" size="sm" />
       </VBox>
       <VSeparator />
-      <Button text={"Entrar"} onPress={() => router.push("/(tabs)")} />
+      <Button text={"Entrar"} onPress={() => router.push("/versions")} />
       <VSeparator spacing="small" />
       <HBox flexWrap>
         <HBox.Item wrap vAlign="center">
