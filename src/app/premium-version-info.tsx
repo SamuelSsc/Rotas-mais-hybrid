@@ -9,6 +9,7 @@ import {
   VSeparator,
 } from "@components";
 import { FontAwesome } from "@expo/vector-icons";
+import { router } from "expo-router";
 import React from "react";
 
 export default function PremiumVersionInfoScreen() {
@@ -67,7 +68,11 @@ export default function PremiumVersionInfoScreen() {
           </HBox.Item>
         </HBox>
         <VSeparator />
-        <Button text="Prosseguir" variant="primary" />
+        <Button
+          text="Prosseguir"
+          variant="primary"
+          onPress={() => router.push("/inscription")}
+        />
       </VBox>
     </Root>
   );

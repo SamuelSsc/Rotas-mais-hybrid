@@ -26,29 +26,29 @@ export const LoginForm = () => {
         label="Email:"
         labelStyle={{
           fontSize: 12,
-          color: commonTheme.color.alert,
+          color: commonTheme.color.black,
         }}
         style={{
-          borderColor: commonTheme.color.alert,
-          color: commonTheme.color.alert,
+          borderColor: commonTheme.color.primary,
+          color: commonTheme.color.black,
         }}
-        renderErrorMessage={true}
-        errorMessage="Email inválido"
-        errorStyle={{ color: commonTheme.color.alert }}
+        // renderErrorMessage={true}
+        // errorMessage="Email inválido"
+        // errorStyle={{ color: commonTheme.color.alert }}
       />
       <VSeparator />
 
       <Input
         label="Senha:"
-        labelStyle={{ fontSize: 12, color: commonTheme.color.alert }}
+        labelStyle={{ fontSize: 12, color: commonTheme.color.black }}
         style={{
           borderColor: commonTheme.color.alert,
-          color: commonTheme.color.alert,
+          color: commonTheme.color.black,
         }}
         secureTextEntry={true}
-        renderErrorMessage={true}
-        errorMessage="Senha inválida"
-        errorStyle={{ color: commonTheme.color.alert }}
+        // renderErrorMessage={true}
+        // errorMessage="Senha inválida"
+        // errorStyle={{ color: commonTheme.color.alert }}
       />
       <VBox noGutter hAlign="flex-start">
         <Button text={"Esqueceu a senha?"} variant="link" size="sm" />

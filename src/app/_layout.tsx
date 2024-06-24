@@ -132,6 +132,15 @@ function RootLayoutNav() {
               presentation: "modal",
             }}
           />
+          <Stack.Screen
+            name="inscription"
+            options={{
+              title: "Forma de Pagamento",
+              headerShown: true,
+              headerBackTitle: "Voltar",
+              presentation: "modal",
+            }}
+          />
         </Stack>
       </PaperProvider>
     </ThemeProvider>
