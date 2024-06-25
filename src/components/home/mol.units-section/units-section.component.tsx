@@ -23,11 +23,16 @@ export type Unit = {
   localName: string;
   description: string;
   variant: CapacityLevel;
+  image: any; // Adicione o tipo correto para a imagem
+  onGo?: () => void; // Certifique-se de que onGo está definido em Unit
+  going?: boolean;
 };
+
 interface UnitsSectionProps {
   unitis: Unit[];
   onUnitSelectedChange: (data: Unit) => void;
   onGo: () => void;
+  going?: boolean;
 }
 
 export const UnitsSection = (props: UnitsSectionProps) => {
@@ -46,7 +51,9 @@ export const UnitsSection = (props: UnitsSectionProps) => {
     >
       <Carousel
         data={props.unitis}
-        renderItem={UnitItem}
+        renderItem={({ item }) => (
+          <UnitItem item={{ ...item, onGo: props.onGo, going: props.going }} />
+        )}
         sliderWidth={width}
         itemWidth={width * 0.8}
         onSnapToItem={getItemData}
@@ -55,7 +62,12 @@ export const UnitsSection = (props: UnitsSectionProps) => {
   );
 };
 
-export const UnitItem = ({ item }) => {
+interface UnitItemProps {
+  item: Unit;
+}
+
+export const UnitItem = ({ item }: UnitItemProps) => {
+  console.log(item.onGo);
   return (
     <Card
       containerStyle={{
@@ -67,7 +79,6 @@ export const UnitItem = ({ item }) => {
       <View style={{ position: "absolute", zIndex: 1, left: 10, top: 10 }}>
         <Badge variant={item.variant} />
       </View>
-      {/* AJUSTAR O FUNCIONAMENTO DA SELEÇÃO DE PREFERIDOS AQUI EM BAIXO */}
       <Pressable
         style={{
           position: "absolute",
@@ -101,11 +112,13 @@ export const UnitItem = ({ item }) => {
         {item.description}
       </BodySecondary>
       <VSeparator />
-
       <VBox>
         <HBox>
           <HBox.Item>
-            <Button text={"Ir"} onPress={item.onGo} />
+            <Button
+              text={item.going ? "A caminho..." : "Ir"}
+              onPress={item.onGo}
+            />
           </HBox.Item>
           <HBox.Separator />
           <HBox.Item>

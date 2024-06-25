@@ -11,6 +11,7 @@ import Mock_Image from "@assets/images/img_ubs_mock.jpg";
 import Mock_Image2 from "@assets/images/Mock-Image-2.jpeg";
 import Mock_Image3 from "@assets/images/Mock-Image-3.jpeg";
 import Mock_Image4 from "@assets/images/Mock-Image-4.jpeg";
+import { commonTheme } from "@constants/obj.theme";
 
 export default function App() {
   const screen = Dimensions.get("window");
@@ -19,6 +20,7 @@ export default function App() {
 
   const [unitSelected, setUnitSelected] = useState<Unit>(MOCK[0]);
   const [directions, setDirections] = useState<MapDirectionsResponse>();
+  const [going, setGoing] = useState(false);
 
   const handleUnitsChange = (data: Unit) => {
     setUnitSelected(data);
@@ -30,8 +32,10 @@ export default function App() {
     });
   };
 
-  const handleGo = () =>
-    mapRef.current.fitToCoordinates(directions.coordinates, {
+  const handleGo = () => {
+    console.log("ESTá Indo");
+    setGoing(true);
+    mapRef?.current?.fitToCoordinates(directions?.coordinates, {
       edgePadding: {
         top: 50,
         bottom: 50,
@@ -39,6 +43,7 @@ export default function App() {
         right: 50,
       },
     });
+  };
 
   return (
     <VBox vGrow noGutter>
@@ -52,16 +57,18 @@ export default function App() {
         }}
         ref={mapRef}
       >
-        <MapViewDirections
-          origin={MOCK[1].coordinate}
-          destination={unitSelected.coordinate}
-          apikey={"AIzaSyA1ne797VJiS63dznN5t6MyDzR19tYTnbI"}
-          strokeColor="hotpink"
-          strokeWidth={4}
-          onReady={(result) => {
-            setDirections(result);
-          }}
-        />
+        {going && (
+          <MapViewDirections
+            origin={MOCK[1].coordinate}
+            destination={unitSelected.coordinate}
+            apikey={"AIzaSyA1ne797VJiS63dznN5t6MyDzR19tYTnbI"}
+            strokeColor={commonTheme.color.primaryDark}
+            strokeWidth={7}
+            onReady={(result) => {
+              setDirections(result);
+            }}
+          />
+        )}
 
         {MOCK.map((item) => (
           // DAR UM DESTAQUE MAIOR PARA O MARKER QUE ESTIVER A ÁMOSTRA
@@ -83,6 +90,7 @@ export default function App() {
         unitis={MOCK}
         onUnitSelectedChange={handleUnitsChange}
         onGo={handleGo}
+        going={going}
       />
     </VBox>
   );
