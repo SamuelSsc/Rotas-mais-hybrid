@@ -33,7 +33,6 @@ export default function App() {
   };
 
   const handleGo = () => {
-    console.log("ESTá Indo");
     setGoing(true);
     mapRef?.current?.fitToCoordinates(directions?.coordinates, {
       edgePadding: {

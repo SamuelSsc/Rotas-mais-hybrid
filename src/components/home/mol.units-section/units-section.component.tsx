@@ -67,7 +67,6 @@ interface UnitItemProps {
 }
 
 export const UnitItem = ({ item }: UnitItemProps) => {
-  console.log(item.onGo);
   return (
     <Card
       containerStyle={{

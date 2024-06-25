@@ -1,6 +1,6 @@
 import React from "react";
 
-import { H1, H3, H4, HBox, Label, Root, VBox, VSeparator } from "@components";
+import { H1, H3, HBox, Root, VBox, VSeparator } from "@components";
 import { Divider, RadioButton, Switch } from "react-native-paper";
 
 export default function AssessibilityScreen() {
@@ -8,42 +8,272 @@ export default function AssessibilityScreen() {
   const [textSize, setTextSize] = React.useState("medium");
   const [isSwitchOn, setIsSwitchOn] = React.useState(false);
 
-  const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
+  const onToggleSwitch = () => {
+    if (!isSwitchOn) {
+      setThemeValue("dark");
+    }
+    setIsSwitchOn(!isSwitchOn);
+  };
 
   return (
     <Root>
-      <VBox>
+      <VBox
+        vGrow
+        style={{ backgroundColor: valueTheme === "dark" ? "#212121" : "#fff" }}
+      >
         <VSeparator />
-        <H1>Configuração</H1>
+        <H1
+          style={{
+            color: isSwitchOn
+              ? "yellow"
+              : valueTheme === "dark"
+              ? "#FAFAFA"
+              : "#212121",
+            fontSize:
+              textSize === "small"
+                ? "20px"
+                : textSize === "big"
+                ? "28px"
+                : textSize === "veryBig"
+                ? "30px"
+                : "22px",
+          }}
+        >
+          Configuração
+        </H1>
         <VSeparator />
 
-        <H3>Tema</H3>
+        <H3
+          style={{
+            color: isSwitchOn
+              ? "yellow"
+              : valueTheme === "dark"
+              ? "#FAFAFA"
+              : "#212121",
+            fontSize:
+              textSize === "small"
+                ? "14px"
+                : textSize === "big"
+                ? "22px"
+                : textSize === "veryBig"
+                ? "26px"
+                : "16px",
+          }}
+        >
+          Tema
+        </H3>
         <RadioButton.Group
           onValueChange={(value) => setThemeValue(value)}
           value={valueTheme}
         >
-          <RadioButton.Item label="Claro" value="light" />
-          <RadioButton.Item label="Escuro" value="dark" />
+          <RadioButton.Item
+            color={
+              isSwitchOn
+                ? "#109010"
+                : valueTheme === "dark"
+                ? "#FAFAFA"
+                : "#212121"
+            }
+            label="Claro"
+            value="light"
+            labelStyle={{
+              color: isSwitchOn
+                ? "yellow"
+                : valueTheme === "dark"
+                ? "#FAFAFA"
+                : "#212121",
+              fontSize:
+                textSize === "small"
+                  ? 12
+                  : textSize === "big"
+                  ? 18
+                  : textSize === "veryBig"
+                  ? 20
+                  : 16,
+            }}
+          />
+          <RadioButton.Item
+            color={
+              isSwitchOn
+                ? "#109010"
+                : valueTheme === "dark"
+                ? "#FAFAFA"
+                : "#212121"
+            }
+            label="Escuro"
+            value="dark"
+            labelStyle={{
+              color: isSwitchOn
+                ? "yellow"
+                : valueTheme === "dark"
+                ? "#FAFAFA"
+                : "#212121",
+              fontSize:
+                textSize === "small"
+                  ? 12
+                  : textSize === "big"
+                  ? 18
+                  : textSize === "veryBig"
+                  ? 20
+                  : 16,
+            }}
+          />
         </RadioButton.Group>
         <Divider />
         <VSeparator />
 
-        <H3>Tamanho da fonte:</H3>
+        <H3
+          style={{
+            color: isSwitchOn
+              ? "yellow"
+              : valueTheme === "dark"
+              ? "#FAFAFA"
+              : "#212121",
+            fontSize:
+              textSize === "small"
+                ? "14px"
+                : textSize === "big"
+                ? "22px"
+                : textSize === "veryBig"
+                ? "26px"
+                : "16px",
+          }}
+        >
+          Tamanho da fonte:
+        </H3>
         <RadioButton.Group
           onValueChange={(value) => setTextSize(value)}
           value={textSize}
         >
-          <RadioButton.Item label="Pequeno" value="small" />
-          <RadioButton.Item label="Regular" value="medium" />
-          <RadioButton.Item label="Grande" value="big" />
-          <RadioButton.Item label="Muito grande" value="veryBig" />
+          <RadioButton.Item
+            color={
+              isSwitchOn
+                ? "#109010"
+                : valueTheme === "dark"
+                ? "#FAFAFA"
+                : "#212121"
+            }
+            label="Pequeno"
+            value="small"
+            labelStyle={{
+              color: isSwitchOn
+                ? "yellow"
+                : valueTheme === "dark"
+                ? "#FAFAFA"
+                : "#212121",
+              fontSize:
+                textSize === "small"
+                  ? 12
+                  : textSize === "big"
+                  ? 18
+                  : textSize === "veryBig"
+                  ? 20
+                  : 16,
+            }}
+          />
+          <RadioButton.Item
+            color={
+              isSwitchOn
+                ? "#109010"
+                : valueTheme === "dark"
+                ? "#FAFAFA"
+                : "#212121"
+            }
+            label="Regular"
+            value="medium"
+            labelStyle={{
+              color: isSwitchOn
+                ? "yellow"
+                : valueTheme === "dark"
+                ? "#FAFAFA"
+                : "#212121",
+              fontSize:
+                textSize === "small"
+                  ? 12
+                  : textSize === "big"
+                  ? 18
+                  : textSize === "veryBig"
+                  ? 20
+                  : 16,
+            }}
+          />
+          <RadioButton.Item
+            color={
+              isSwitchOn
+                ? "#109010"
+                : valueTheme === "dark"
+                ? "#FAFAFA"
+                : "#212121"
+            }
+            label="Grande"
+            value="big"
+            labelStyle={{
+              color: isSwitchOn
+                ? "yellow"
+                : valueTheme === "dark"
+                ? "#FAFAFA"
+                : "#212121",
+              fontSize:
+                textSize === "small"
+                  ? 12
+                  : textSize === "big"
+                  ? 18
+                  : textSize === "veryBig"
+                  ? 20
+                  : 16,
+            }}
+          />
+          <RadioButton.Item
+            color={
+              isSwitchOn
+                ? "#109010"
+                : valueTheme === "dark"
+                ? "#FAFAFA"
+                : "#212121"
+            }
+            label="Muito grande"
+            value="veryBig"
+            labelStyle={{
+              color: isSwitchOn
+                ? "yellow"
+                : valueTheme === "dark"
+                ? "#FAFAFA"
+                : "#212121",
+              fontSize:
+                textSize === "small"
+                  ? 12
+                  : textSize === "big"
+                  ? 18
+                  : textSize === "veryBig"
+                  ? 20
+                  : 16,
+            }}
+          />
         </RadioButton.Group>
         <Divider />
         <VSeparator />
 
         <HBox>
           <HBox.Item>
-            <H3>Alto Contraste</H3>
+            <H3
+              style={{
+                color: isSwitchOn
+                  ? "yellow"
+                  : valueTheme === "dark"
+                  ? "#FAFAFA"
+                  : "#212121",
+                fontSize:
+                  textSize === "small"
+                    ? "14px"
+                    : textSize === "big"
+                    ? "22px"
+                    : textSize === "veryBig"
+                    ? "26px"
+                    : "16px",
+              }}
+            >
+              Alto Contraste
+            </H3>
           </HBox.Item>
           <Switch value={isSwitchOn} onValueChange={onToggleSwitch} />
         </HBox>
