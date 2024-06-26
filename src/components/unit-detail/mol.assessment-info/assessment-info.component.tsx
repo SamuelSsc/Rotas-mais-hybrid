@@ -17,6 +17,12 @@ import { GetFeedback } from "@components/unit-detail/mol.get-feedback";
 
 export const AssessmentInfo = () => {
   const [visibleFeedback, setVisibleFeedback] = useState(false);
+  const [afterFeedback, setAfterFeedback] = useState(false);
+
+  const handleFinishFeedback = (val: boolean) => {
+    setVisibleFeedback(val);
+    setAfterFeedback(true);
+  };
 
   return (
     <VBox bgColor>
@@ -28,7 +34,7 @@ export const AssessmentInfo = () => {
         onPress={() => setVisibleFeedback(true)}
       />
       {visibleFeedback ? (
-        <GetFeedback onFinishTimer={setVisibleFeedback} />
+        <GetFeedback onFinishTimer={handleFinishFeedback} />
       ) : null}
 
       <VSeparator />
@@ -45,11 +51,11 @@ export const AssessmentInfo = () => {
               <H3>Lotação:</H3>
             </Card.Title>
             <Speedometer
-              value={75}
+              value={afterFeedback ? 70 : 55}
               max={100}
               angle={180}
               lineCap="round"
-              accentColor="#bb2200"
+              accentColor={afterFeedback ? "#C15D5D" : "#A38D00"}
               width={150}
               height={50}
             >
@@ -57,7 +63,7 @@ export const AssessmentInfo = () => {
               <Progress arcWidth={20} />
               <Indicator fixValue />
             </Speedometer>
-            <Body center>{"Alta"}</Body>
+            <Body center>{afterFeedback ? "Alta" : "Aceitável"}</Body>
           </Card>
         </HBox.Item>
         <HBox.Separator spacing="small" />
@@ -73,7 +79,9 @@ export const AssessmentInfo = () => {
             <Card.Title>
               <H3>Tempo médio de atendimento:</H3>
             </Card.Title>
-            <H3 center>Acima de 3 Hrs</H3>
+            <H3 center>
+              {afterFeedback ? "Acima de 3 hrs" : "Entre 2 e 3 hrs"}
+            </H3>
             <VSeparator />
             <VSeparator spacing="small" />
             <VSeparator spacing="small" />

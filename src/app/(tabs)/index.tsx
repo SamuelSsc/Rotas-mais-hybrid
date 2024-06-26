@@ -11,8 +11,13 @@ import Mock_Image from "@assets/images/img_ubs_mock.jpg";
 import Mock_Image2 from "@assets/images/Mock-Image-2.jpeg";
 import Mock_Image3 from "@assets/images/Mock-Image-3.jpeg";
 import Mock_Image4 from "@assets/images/Mock-Image-4.jpeg";
+import Mock_Image5 from "@assets/images/Mock-Image-5.jpg";
 import { commonTheme } from "@constants/obj.theme";
 
+const ORIGIN = {
+  latitude: -23.645436,
+  longitude: -46.732467,
+};
 export default function App() {
   const screen = Dimensions.get("window");
   const width = screen.width;
@@ -58,7 +63,7 @@ export default function App() {
       >
         {going && (
           <MapViewDirections
-            origin={MOCK[1].coordinate}
+            origin={ORIGIN}
             destination={unitSelected.coordinate}
             apikey={"AIzaSyA1ne797VJiS63dznN5t6MyDzR19tYTnbI"}
             strokeColor={commonTheme.color.primaryDark}
@@ -105,8 +110,20 @@ export const MOCK = [
     localName: "Hospital do Servidor Público Municipal",
     description:
       "Localizado na vibrante cidade de São Paulo, o Hospital do Servidor Público Municipal é um símbolo de dedicação e cuidado à saúde. Situado na Avenida 23 de Maio, nosso hospital combina tecnologia de ponta com uma equipe de profissionais altamente qualificados, prontos para oferecer o melhor atendimento possível.",
-    variant: CapacityLevel.Close,
+    variant: CapacityLevel.VeryFull,
     image: Mock_Image2,
+  },
+  {
+    id: "5",
+    coordinate: {
+      latitude: -23.60254,
+      longitude: -46.67337,
+    },
+    localName: "Hospital da Santa Casa de Santo Amaro",
+    description:
+      "Localizado no coração de Santo Amaro, em São Paulo, o Hospital da Santa Casa de Santo Amaro é uma instituição renomada, conhecida pela tradição e excelência no atendimento à saúde.",
+    variant: CapacityLevel.Medium,
+    image: Mock_Image4,
   },
   {
     id: "2",
@@ -116,42 +133,32 @@ export const MOCK = [
     },
     localName: "Hospital Regional Sul",
     description:
-      "Unidade de saude regional sul, atendendo os clientes com os melhores funcionários e no melhor tempo possível, venha você tambem se tratar com a gente.",
-    variant: CapacityLevel.VeryFull,
+      "Unidade de saúde regional sul, atendendo os clientes com os melhores funcionários e no melhor tempo possível, venha você também se tratar com a gente.",
+    variant: CapacityLevel.Close,
     image: Mock_Image3,
   },
   {
     id: "3",
     coordinate: {
-      latitude: -23.65924655,
-      longitude: -46.7179325,
+      latitude: -23.5467,
+      longitude: -46.6357,
     },
     localName: "Hospital da Luz Unidade Avançada Barão do Rio Branco",
-    description: "MOCK FOR TCC",
+    description:
+      "Localizado no coração da cidade, o Hospital da Luz Unidade Avançada Barão do Rio Branco é um centro de excelência em cuidados médicos, oferecendo uma ampla gama de serviços de saúde de alta qualidade.",
     variant: CapacityLevel.Full,
     image: Mock_Image,
   },
   {
     id: "4",
     coordinate: {
-      latitude: -23.65961,
-      longitude: -46.7159449,
+      latitude: -23.56321,
+      longitude: -46.65425,
     },
-    localName: "Hospital tito de morais",
-    description: "MOCK FOR TCC",
-    variant: CapacityLevel.Medium,
-    image: Mock_Image,
-  },
-  {
-    id: "5",
-    coordinate: {
-      latitude: -23.6616906,
-      longitude: -46.7222863,
-    },
-    localName: "Hospital da Santa Casa de Santo Amaro",
+    localName: "Hospital Tito de Morais",
     description:
-      "Localizado no coração de Santo Amaro, em São Paulo, o Hospital da Santa Casa de Santo Amaro é uma instituição renomada, conhecida pela tradição e excelência no atendimento à saúde.",
+      "O Hospital Tito de Morais é uma instituição dedicada a fornecer atendimento médico de qualidade e acessível à comunidade",
     variant: CapacityLevel.Empty,
-    image: Mock_Image4,
+    image: Mock_Image5,
   },
 ];
