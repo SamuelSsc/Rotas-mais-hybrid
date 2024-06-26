@@ -8,7 +8,7 @@ interface ChipProps {
   onPress?: () => void;
 }
 
-export const Chip = ({ text, selected }: ChipProps) => {
+export const Chip = ({ text, selected, onPress }: ChipProps) => {
   return (
     <>
       <ChipComponent
@@ -17,9 +17,10 @@ export const Chip = ({ text, selected }: ChipProps) => {
         iconRight={selected}
         icon={
           selected
-            ? { name: "close", type: "font-awesome", color: "white" }
+            ? { name: "close", type: "font-awesome", color: "white", size: 12 }
             : null
         }
+        onPress={onPress}
       >
         {text}
       </ChipComponent>

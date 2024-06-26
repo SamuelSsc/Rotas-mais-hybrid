@@ -1,4 +1,4 @@
-import { BottomSheet, Divider, Icon, Slider } from "@rneui/base";
+import { BottomSheet, Divider, Slider } from "@rneui/base";
 import React, { useState } from "react";
 import { View } from "react-native";
 import { Body, H2, H4 } from "../atm.typography";
@@ -11,12 +11,27 @@ import { Button } from "../atm.button";
 interface FilterBottomSheetProps {
   isVisible: boolean;
   setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  onFilterChange: React.Dispatch<React.SetStateAction<string[]>>;
+  selectedChips: string[];
 }
+
 export const FilterBottomSheet = ({
   isVisible,
   setIsVisible,
+  onFilterChange,
+  selectedChips,
 }: FilterBottomSheetProps) => {
-  const [val, setVertValue] = useState(0);
+  const [val, setVertValue] = useState(20);
+
+  const toggleChipSelection = (chip: string) => {
+    onFilterChange((prevSelectedChips) =>
+      prevSelectedChips.includes(chip)
+        ? prevSelectedChips.filter((selectedChip) => selectedChip !== chip)
+        : [...prevSelectedChips, chip]
+    );
+  };
+
+  const chips = ["Vazio", "Aceitável", "Cheio", "Muito cheio", "Fechado"];
 
   return (
     <BottomSheet
@@ -63,43 +78,35 @@ export const FilterBottomSheet = ({
           <H4>Lotacão:</H4>
           <VSeparator spacing="small" />
           <HBox flexWrap>
-            <HBox.Item wrap vAlign="center">
-              <Chip text="Vazio" selected />
-            </HBox.Item>
-            <HBox.Separator spacing="small" />
-
-            <HBox.Item wrap vAlign="center">
-              <Chip text="Aceitável" selected />
-            </HBox.Item>
-            <HBox.Separator spacing="small" />
-
-            <HBox.Item wrap vAlign="center">
-              <Chip text="Cheio" />
-            </HBox.Item>
-            <HBox.Separator spacing="small" />
-
-            <HBox.Item wrap vAlign="center">
-              <Chip text="Muito cheio" />
-            </HBox.Item>
-            <HBox.Separator spacing="small" />
-
-            <HBox.Item wrap vAlign="center">
-              <Chip text="Fechado" />
-            </HBox.Item>
+            {chips.map((chip) => (
+              <React.Fragment key={chip}>
+                <HBox.Item wrap vAlign="center">
+                  <Chip
+                    text={chip}
+                    selected={selectedChips.includes(chip)}
+                    onPress={() => toggleChipSelection(chip)}
+                  />
+                </HBox.Item>
+                <HBox.Separator spacing="small" />
+              </React.Fragment>
+            ))}
           </HBox>
         </VBox>
         <Divider />
         <VSeparator />
 
-        {/* AJUSTAR FUNCIONALIDADE DO BOTTOMSHEET */}
         <VBox>
           <HBox>
             <HBox.Item>
-              <Button text="Cancelar" variant="secondary" />
+              <Button
+                text="Cancelar"
+                variant="secondary"
+                onPress={() => setIsVisible(false)}
+              />
             </HBox.Item>
             <HBox.Separator spacing="small" />
             <HBox.Item>
-              <Button text="Aplicar" />
+              <Button text="Aplicar" onPress={() => setIsVisible(false)} />
             </HBox.Item>
           </HBox>
         </VBox>

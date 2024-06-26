@@ -27,10 +27,11 @@ export enum CapacityLevel {
   Empty = "Empty",
 }
 
-const mapBadge: Record<CapacityLevel, { color: string; text: string }> = {
-  VeryFull: { color: commonTheme.color.alertDark, text: "Muito cheio" },
-  Full: { color: commonTheme.color.alert, text: "Cheio" },
-  Close: { color: commonTheme.color.black, text: "Fechado" },
-  Medium: { color: commonTheme.color.callToAction, text: "Aceitável" },
-  Empty: { color: commonTheme.color.success, text: "Vazio" },
-};
+export const mapBadge: Record<CapacityLevel, { color: string; text: string }> =
+  {
+    VeryFull: { color: commonTheme.color.alertDark, text: "Muito cheio" },
+    Full: { color: commonTheme.color.alert, text: "Cheio" },
+    Close: { color: commonTheme.color.black, text: "Fechado" },
+    Medium: { color: commonTheme.color.callToAction, text: "Aceitável" },
+    Empty: { color: commonTheme.color.success, text: "Vazio" },
+  };
